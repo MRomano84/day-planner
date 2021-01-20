@@ -3,8 +3,8 @@
 const events = document.querySelectorAll('.event');
 
 events.forEach(event => {
-    const date = dayjs(event.dataset.date).format("h:mma on ddd MMMM DD, YYYY");
-    const dateElement = document.querySelector(".date");
+    const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
+    const dateElement = document.querySelector(".current-time");
 
     dateElement.innerHTML = date;
 });
