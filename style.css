@@ -5,7 +5,6 @@
 div.container {
     display: flexbox;
     background-color: aqua;
-    margin-top: 100px;
     padding: 25px;
 }
 
@@ -15,4 +14,9 @@ input.dailyPlan {
 
 span.timeBox {
     text-align: center;
+}
+
+nav.navbar {
+    text-align: center;
+    border: 5px black solid;
 }

@@ -82,7 +82,7 @@ $(document).ready(function() {
         $saveDiv.append($saveBtn);
 
 
-
+        changeRowColor($rowDiv, hour);
 
 
 
@@ -93,6 +93,18 @@ $(document).ready(function() {
 
 
     //NEED TO: Update row color
+
+    function changeRowColor($rowHour, hour) {
+        
+        if (hour < 13) {
+            $rowHour.css("background-color", "lightgrey")
+        } else if (hour > 13) {
+            $rowHour.css("background-color", "lightgreen")
+        } else {
+            $rowHour.css("background-color", "tomato")
+
+        }
+    };
 
 
 
