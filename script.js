@@ -39,6 +39,13 @@ $(document).ready(function() {
             displayHour = hour;
             ampm = "am";
         }
+        
+        
+        $timeBoxSpan.text(`${displayHour} ${ampm}`);
+        
+        $rowDiv.append($timeDiv);
+        $timeDiv.append($timeBoxSpan);
+
 
 
 
@@ -47,18 +54,31 @@ $(document).ready(function() {
         let $activitySpan = $("<input>");
 
         $activitySpan.attr("id", `input-${index}`);
+        $activitySpan.attr('hour-index', index);
+        $activitySpan.attr('type', 'text');
+        $activitySpan.attr('class', 'dailyPlan');
 
-        $timeBoxSpan.text(`${displayHour} ${ampm}`);
+        let $inputDiv = $("<div>");
+        $inputDiv.addClass("col-9");
 
-        $rowDiv.append($timeDiv);
-        $timeDiv.append($timeBoxSpan);
-
-
-
+        $rowDiv.append($inputDiv);
+        $inputDiv.append($activitySpan);
 
 
 
-        $plannerContainer.append(rowDiv);
+
+        //building save area
+        let $saveDiv = $("<div>");
+        $saveDiv.addClass("col-1");
+
+
+
+
+
+
+
+
+        $rowDiv.appendTo($plannerContainer);
     };
 
 
