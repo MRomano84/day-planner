@@ -1,0 +1,18 @@
+* {
+    display: block;
+}
+
+div.container {
+    display: flexbox;
+    background-color: aqua;
+    margin-top: 100px;
+    padding: 25px;
+}
+
+input.dailyPlan {
+    width: 100%;
+}
+
+span.timeBox {
+    text-align: center;
+}

@@ -68,9 +68,18 @@ $(document).ready(function() {
 
 
         //building save area
-        let $saveDiv = $("<div>");
+        let $saveDiv = $("<div>Save</div>");
         $saveDiv.addClass("col-1");
 
+        let $saveBtn = $('<i>');
+        $saveBtn.attr('id', `saveid-${index}`);
+        $saveBtn.attr('save-id', index);
+        $saveBtn.attr('class', "save");
+
+
+
+        $rowDiv.append($saveDiv);
+        $saveDiv.append($saveBtn);
 
 
 
@@ -80,6 +89,30 @@ $(document).ready(function() {
 
         $rowDiv.appendTo($plannerContainer);
     };
+
+
+
+    //NEED TO: Update row color
+
+
+
+
+
+    //NEED TO: Save hourly activities to local storage...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // let $activity = $("input.activity").val();
