@@ -1,12 +1,30 @@
 'use strict';
 
-const events = document.querySelectorAll('.event');
+$(document).ready(function() {
 
-events.forEach(event => {
+
+    const dateElement = $("div.current-time");
     const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
-    const dateElement = document.querySelector(".current-time");
 
-    dateElement.innerHTML = date;
-});
+    dateElement.text(date);
+
+    
+    // const events = $('.event');
+
+    // for(let i = 0; i < events.length; i++) {
+    //     const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
+    //     const dateElement = $("div.current-time");
+
+    //     dateElement.text(date);
+    // }
+    // // events.forEach(event => {
+    //     const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
+    //     const dateElement = $("div.current-time");
+    
+    //     console.log(dateElement);
+    // });
+
+})
+
 
 
