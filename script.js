@@ -7,7 +7,13 @@ $(document).ready(function() {
     const $dateElement = $("#navbar-subtitle");
     $dateElement.text(now);
 
+    let currentHour = dayjs().format("H");
+
     let $plannerContainer = $("div.container");
+
+
+
+
 
     for (let hour = 9; hour <= 17; hour++) {
         let index = hour - 9;
@@ -17,6 +23,7 @@ $(document).ready(function() {
         let $rowDiv = $("<div>");
         $rowDiv.addClass("row");
         $rowDiv.addClass("plannerRow");
+        $rowDiv.addClass("dailyPlan");
         $rowDiv.attr("hour-index", hour);
 
 
@@ -68,13 +75,14 @@ $(document).ready(function() {
 
 
         //building save area
-        let $saveDiv = $("<div>Save</div>");
+        let $saveDiv = $("<div class='save'>Save</div>");
         $saveDiv.addClass("col-1");
 
         let $saveBtn = $('<i>');
         $saveBtn.attr('id', `saveid-${index}`);
         $saveBtn.attr('save-id', index);
         $saveBtn.attr('class', "save");
+        // $saveBtn.attr('src', "./small_floppy.svg")
 
 
 
@@ -92,13 +100,13 @@ $(document).ready(function() {
 
 
 
-    //NEED TO: Update row color
+    // Update row color
 
     function changeRowColor($rowHour, hour) {
         
-        if (hour < 13) {
+        if (hour < currentHour) {
             $rowHour.css("background-color", "lightgrey")
-        } else if (hour > 13) {
+        } else if (hour > currentHour) {
             $rowHour.css("background-color", "lightgreen")
         } else {
             $rowHour.css("background-color", "tomato")
@@ -113,7 +121,14 @@ $(document).ready(function() {
     //NEED TO: Save hourly activities to local storage...
 
 
+    $(".save")on("click", function(event) {
+        event.preventDefault();
 
+        let $index = $(this).attr("save-id");
+
+        let inputId = "#input" + $index;
+        let $value = $(inputId).val();
+    })
 
 
 

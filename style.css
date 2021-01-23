@@ -4,8 +4,9 @@
 
 div.container {
     display: flexbox;
-    background-color: aqua;
+    background-color: #333333;
     padding: 25px;
+    margin-top: 20px;
 }
 
 input.dailyPlan {
@@ -19,4 +20,13 @@ span.timeBox {
 nav.navbar {
     text-align: center;
     border: 5px black solid;
+}
+
+div.header-text {
+    text-align: center;
+}
+
+.save {
+    background-image: url(./Floppy-Disk-icon.png);
+    background-repeat: no-repeat;
 }
