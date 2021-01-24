@@ -16,7 +16,7 @@ $(document).ready(function () {
     if (dayPlans !== null) {
         plansArr = dayPlans;
     }
-
+    
 
 
 
@@ -125,6 +125,11 @@ $(document).ready(function () {
     $("div.save").on("click", function() {
         var myContent = $("textarea.text").value;
 
+        let allActivities = {
+            Plan: myContent,
+        }
+    
+        localStorage.setItem("allActivites", JSON.stringify(allActivities));
         console.log(myContent);
         // localStorage.setItem("myContent", myContent);
 
