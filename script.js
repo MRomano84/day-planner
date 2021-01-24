@@ -1,11 +1,12 @@
 $(document).ready(function () {
     'use strict';
 
+    //Current time
     const now = dayjs().format("h:mma - ddd MMMM DD, YYYY");
-
     const $dateElement = $("#navbar-subtitle");
     $dateElement.text(now);
 
+    //To check hour for background color
     let currentHour = dayjs().format("H");
 
     let $plannerContainer = $("div.container");
@@ -18,8 +19,7 @@ $(document).ready(function () {
     }
     
 
-
-
+    //Loop to build rows
     for (let hour = 9; hour <= 17; hour++) {
         let index = hour - 9;
 
@@ -89,8 +89,6 @@ $(document).ready(function () {
         $saveBtn.attr("class", "fas fa-save");
         // $saveBtn.attr('src', "./Floppy-Disk-icon.png")
 
-
-
         $rowDiv.append($saveDiv);
         $saveDiv.append($saveBtn);
 
@@ -99,14 +97,13 @@ $(document).ready(function () {
 
 
 
-
+        //Append the planner to the page
         $rowDiv.appendTo($plannerContainer);
     };
 
 
 
     // Update row color
-
     function changeRowColor($rowHour, hour) {
 
         if (hour < currentHour) {
