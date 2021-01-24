@@ -29,4 +29,9 @@ div.header-text {
 .save {
     background-image: url(./Floppy-Disk-icon.png);
     background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+div.plannerRow {
+    min-height: 20pxcd;
 }

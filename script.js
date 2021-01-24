@@ -1,6 +1,5 @@
-'use strict';
-
 $(document).ready(function() {
+    'use strict';
 
     const now = dayjs().format("h:mma - ddd MMMM DD, YYYY");
 
@@ -10,6 +9,7 @@ $(document).ready(function() {
     let currentHour = dayjs().format("H");
 
     let $plannerContainer = $("div.container");
+    $plannerContainer.empty();
 
 
 
@@ -121,14 +121,14 @@ $(document).ready(function() {
     //NEED TO: Save hourly activities to local storage...
 
 
-    $(".save")on("click", function(event) {
-        event.preventDefault();
+    // $(".save")on("click", function(event) {
+    //     event.preventDefault();
 
-        let $index = $(this).attr("save-id");
+    //     let $index = $(this).attr("save-id");
 
-        let inputId = "#input" + $index;
-        let $value = $(inputId).val();
-    })
+    //     let inputId = "#input" + $index;
+    //     let $value = $(inputId).val();
+    // })
 
 
 
