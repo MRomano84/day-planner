@@ -8,9 +8,10 @@ $(document).ready(function() {
 
     let currentHour = dayjs().format("H");
 
+    let savedActivities = JSON.parse(localStorage.getItem("savedActivities"));
+
     let $plannerContainer = $("div.container");
     $plannerContainer.empty();
-
 
 
 
@@ -119,6 +120,18 @@ $(document).ready(function() {
 
 
     //NEED TO: Save hourly activities to local storage...
+    $("i").on("click", function(event) {
+        event.preventDefault();
+
+        let $index = $(this).attr("save-id");
+
+        let inputId = "#input-" + $index;
+        let $value = $(inputId).val();
+
+        textArr = $value;
+
+        localStorage.setItem("savedActivities", JSON.stringify(textArr));
+    })
     // const saveActivity = function(event) {
     //     let activity = {
     //         Activity: $("textarea input.hour-index[i]").val();
