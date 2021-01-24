@@ -3,7 +3,7 @@
 } */
 body {
     display: block;
-    background-image: url(./assets/commuters.jpg);
+    background-image: url(./commuters.jpg);
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Playfair Display', serif;
