@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     'use strict';
 
     const now = dayjs().format("h:mma - ddd MMMM DD, YYYY");
@@ -8,10 +8,14 @@ $(document).ready(function() {
 
     let currentHour = dayjs().format("H");
 
-    let savedActivities = JSON.parse(localStorage.getItem("savedActivities"));
-
     let $plannerContainer = $("div.container");
     $plannerContainer.empty();
+
+
+    let dayPlans = JSON.parse(localStorage.getItem("dayPlans"));
+    if (dayPlans !== null) {
+        plansArr = dayPlans;
+    }
 
 
 
@@ -47,10 +51,10 @@ $(document).ready(function() {
             displayHour = hour;
             ampm = "am";
         }
-        
-        
+
+
         $timeBoxSpan.text(`${displayHour} ${ampm}`);
-        
+
         $rowDiv.append($timeDiv);
         $timeDiv.append($timeBoxSpan);
 
@@ -67,7 +71,7 @@ $(document).ready(function() {
         $activitySpan.attr('class', 'dailyPlan');
 
         let $inputDiv = $("<textarea>");
-        $inputDiv.addClass("col-9");
+        $inputDiv.addClass("col-9 text");
 
         $rowDiv.append($inputDiv);
         $inputDiv.append($activitySpan);
@@ -104,7 +108,7 @@ $(document).ready(function() {
     // Update row color
 
     function changeRowColor($rowHour, hour) {
-        
+
         if (hour < currentHour) {
             $rowHour.css("background-color", "lightgrey")
         } else if (hour > currentHour) {
@@ -113,92 +117,26 @@ $(document).ready(function() {
             $rowHour.css("background-color", "tomato")
 
         }
+
     };
 
 
+    //Save hourly activities to local storage...I CANNOT GET THIS TO WORK...
+    $("div.save").on("click", function() {
+        var myContent = $("textarea.text").value;
+
+        console.log(myContent);
+        // localStorage.setItem("myContent", myContent);
+
+        // function myLoad() {
+        //     var myContent = localStorage.getItem("myContent");
+        //     document.querySelector("textarea").value = myContent;
+        // }
 
 
-
-    //NEED TO: Save hourly activities to local storage...
-    $("i").on("click", function(event) {
-        event.preventDefault();
-
-        let $index = $(this).attr("save-id");
-
-        let inputId = "#input-" + $index;
-        let $value = $(inputId).val();
-
-        textArr = $value;
-
-        localStorage.setItem("savedActivities", JSON.stringify(textArr));
     })
-    // const saveActivity = function(event) {
-    //     let activity = {
-    //         Activity: $("textarea input.hour-index[i]").val();
-    //     }
-    //     console.log(event);
-    // }
-
-    // $("$saveDiv").on("click", saveActivity);
-
-    // $(".save")on("click", function(event) {
-    //     event.preventDefault();
-
-    //     let $index = $(this).attr("save-id");
-
-    //     let inputId = "#input" + $index;
-    //     let $value = $(inputId).val();
-    // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // let $activity = $("input.activity").val();
-
-
-    // localStorage.setItem("Activity", $activity);
-    
-    
-    
-    // function getActivity() {
-    //     let todo = localStorage.getItem("Activity");
-    //     let theActivity = JSON.parse(todo);
         
-    //     if (!$activity) {
-    //         return;
-    //     } 
-    //     $activity.text(theActivity);
-    // }
-    
-    // $("button.saveBtn").on("click", $activity);
-    
-    
-    // getActivity();
-    // console.log(getActivity);
-    // const events = $('.event');
-
-    // for(let i = 0; i < events.length; i++) {
-    //     const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
-    //     const dateElement = $("div.current-time");
-
-    //     dateElement.text(date);
-    // }
-    // // events.forEach(event => {
-    //     const date = dayjs().format("h:mma - ddd MMMM DD, YYYY");
-    //     const dateElement = $("div.current-time");
-    
-    //     console.log(dateElement);
-    // });
-
+        
 })
 
 
