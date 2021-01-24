@@ -1,10 +1,18 @@
-* {
+/* * {
     display: block;
+} */
+body {
+    display: block;
+    background-image: url(./assets/commuters.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Playfair Display', serif;
 }
 
 div.container {
-    display: flexbox;
+    display: block;
     background-color: #333333;
+    text-align: center;
     padding: 25px;
     margin-top: 20px;
 }
@@ -17,21 +25,22 @@ span.timeBox {
     text-align: center;
 }
 
-nav.navbar {
+div.navbar {
+    display: block;
     text-align: center;
-    border: 5px black solid;
+    color: whitesmoke;
+    text-shadow: 1px 1px red;
 }
 
 div.header-text {
     text-align: center;
 }
 
-.save {
-    background-image: url(./Floppy-Disk-icon.png);
-    background-repeat: no-repeat;
-    margin-top: 5px;
+div.plannerRow {
+    min-height: 20px;
+    border: black 1px solid;
 }
 
-div.plannerRow {
-    min-height: 20pxcd;
+textarea {
+    resize: none;
 }

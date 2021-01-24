@@ -65,7 +65,7 @@ $(document).ready(function() {
         $activitySpan.attr('type', 'text');
         $activitySpan.attr('class', 'dailyPlan');
 
-        let $inputDiv = $("<div>");
+        let $inputDiv = $("<textarea>");
         $inputDiv.addClass("col-9");
 
         $rowDiv.append($inputDiv);
@@ -75,14 +75,14 @@ $(document).ready(function() {
 
 
         //building save area
-        let $saveDiv = $("<div class='save'>Save</div>");
-        $saveDiv.addClass("col-1");
+        let $saveDiv = $("<div>");
+        $saveDiv.addClass("col-1 save");
 
-        let $saveBtn = $('<i>');
-        $saveBtn.attr('id', `saveid-${index}`);
-        $saveBtn.attr('save-id', index);
-        $saveBtn.attr('class', "save");
-        // $saveBtn.attr('src', "./small_floppy.svg")
+        let $saveBtn = $("<i>");
+        $saveBtn.attr("id", `saveid-${index}`);
+        $saveBtn.attr("save-id", index);
+        $saveBtn.attr("class", "fas fa-save");
+        // $saveBtn.attr('src', "./Floppy-Disk-icon.png")
 
 
 
@@ -119,7 +119,14 @@ $(document).ready(function() {
 
 
     //NEED TO: Save hourly activities to local storage...
+    // const saveActivity = function(event) {
+    //     let activity = {
+    //         Activity: $("textarea input.hour-index[i]").val();
+    //     }
+    //     console.log(event);
+    // }
 
+    // $("$saveDiv").on("click", saveActivity);
 
     // $(".save")on("click", function(event) {
     //     event.preventDefault();
