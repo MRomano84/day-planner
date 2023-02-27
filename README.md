@@ -10,4 +10,4 @@ I decided to use Day.js to include the current time into my scheduler. I made a 
 
 
 
-![image](https://github.com/MRomano84/day-planner/blob/main/planner_snippet.PNG)
+![image](planner_snippet.PNG)
